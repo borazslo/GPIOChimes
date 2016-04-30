@@ -28,7 +28,7 @@ def ifBetweenHours( hours, hour):
         if hours[0] <= hour and hours[1] < hour:
             return True
     elif hours[0] > hours[1]:
-        if hours[0] >= hour or hours[1] < hour:
+        if hours[0] <= hour or hours[1] > hour:
             return True
     return False
 
