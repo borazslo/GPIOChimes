@@ -38,15 +38,16 @@ elif now.minute == 30:
     sound(secondQuarter)
 elif now.minute == 45:
     sound(thirdQuarter)    
-elif now.minute == 0: 
-    sound(fourthQuarter)
+elif now.minute == 0:
     if(now.hour > 12):
         hour = now.hour - 11
     elif(now.hour == 0 ):
         hour = 12
     else:
         hour = now.hour
+    hours = fourthQuarter
     for x in xrange(1,hour):
-        sound(Hour)
+        hours = hours+Hour        
         pass
+    sound(hours)
 
