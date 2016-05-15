@@ -1,16 +1,9 @@
-import sys, zmq, re
-
-port = "5555"
-
-context = zmq.Context()
-#print "Connecting to server..."
-socket = context.socket(zmq.REQ)
-socket.connect ("tcp://localhost:%s" % port)
+import sys, re
+import mChimes as chimes
 
 def error( message ):
     print "Error:",message
     sys.exit()
-
 
 if len(sys.argv) > 1:
     command = sys.argv[1]
@@ -30,8 +23,7 @@ if len(sys.argv) > 1:
     else:
         error("Invalid command")
 
-    socket.send (texttosend)  
-    message = socket.recv()
-    print message
+    chimes.send (texttosend)  
+
 else:
     print "Arguments needed"
